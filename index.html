@@ -173,6 +173,159 @@
     </div>
   </div>
 </section>
+  <dialog class="pilot-dialog" id="pilot-dialog">
+  <div class="pilot-modal">
+    <button
+      class="modal-close"
+      type="button"
+      aria-label="Close contact form"
+    >
+      ×
+    </button>
+
+    <div class="modal-intro">
+      <div class="section-label">Pilot conversation</div>
+
+      <h2>Tell us about your portfolio or asset.</h2>
+
+      <p>
+        Share a few details below. FutureAsset will respond directly to
+        discuss whether a pilot assessment could be useful.
+      </p>
+    </div>
+
+    <form
+      class="pilot-form"
+      action="https://formsubmit.co/rachel.hintzen@futureasset.com"
+      method="POST"
+    >
+      <input
+        type="hidden"
+        name="_subject"
+        value="New FutureAsset pilot enquiry"
+      >
+
+      <input
+        type="hidden"
+        name="_template"
+        value="table"
+      >
+
+      <input
+        type="hidden"
+        name="_captcha"
+        value="false"
+      >
+
+      <input
+        type="text"
+        name="_honey"
+        class="form-honeypot"
+        tabindex="-1"
+        autocomplete="off"
+      >
+
+      <div class="form-grid">
+        <div class="form-field">
+          <label for="pilot-name">Name *</label>
+
+          <input
+            id="pilot-name"
+            name="Name"
+            type="text"
+            autocomplete="name"
+            required
+          >
+        </div>
+
+        <div class="form-field">
+          <label for="pilot-company">Company *</label>
+
+          <input
+            id="pilot-company"
+            name="Company"
+            type="text"
+            autocomplete="organization"
+            required
+          >
+        </div>
+
+        <div class="form-field">
+          <label for="pilot-title">Job title</label>
+
+          <input
+            id="pilot-title"
+            name="Job title"
+            type="text"
+            autocomplete="organization-title"
+          >
+        </div>
+
+        <div class="form-field">
+          <label for="pilot-email">Business email *</label>
+
+          <input
+            id="pilot-email"
+            name="Email"
+            type="email"
+            autocomplete="email"
+            required
+          >
+        </div>
+      </div>
+
+      <div class="form-field">
+        <label for="pilot-portfolio">Portfolio or asset type</label>
+
+        <select id="pilot-portfolio" name="Portfolio or asset type">
+          <option value="">Select an option</option>
+          <option>Logistics and industrial</option>
+          <option>Office</option>
+          <option>Retail</option>
+          <option>Residential</option>
+          <option>Mixed portfolio</option>
+          <option>Other</option>
+        </select>
+      </div>
+
+      <div class="form-field">
+        <label for="pilot-message">
+          What would you like to assess? *
+        </label>
+
+        <textarea
+          id="pilot-message"
+          name="Message"
+          rows="5"
+          placeholder="For example: investment prioritisation, solar, batteries, charging infrastructure, energy performance or portfolio-wide opportunities."
+          required
+        ></textarea>
+      </div>
+
+      <label class="privacy-check">
+        <input
+          type="checkbox"
+          name="Privacy consent"
+          value="Accepted"
+          required
+        >
+
+        <span>
+          I agree that FutureAsset may use this information to respond to my
+          enquiry. *
+        </span>
+      </label>
+
+      <button class="button primary form-submit" type="submit">
+        Submit pilot enquiry
+      </button>
+
+      <p class="form-note">
+        Your information will only be used to respond to this enquiry.
+      </p>
+    </form>
+  </div>
+</dialog>
 </main>
 
 <footer>
