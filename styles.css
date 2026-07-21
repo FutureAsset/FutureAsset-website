@@ -13,3 +13,191 @@
 footer{padding:32px 0;background:#07191E;color:rgba(255,255,255,.48)}.footer{display:grid;grid-template-columns:1fr auto auto;gap:30px;align-items:center}.footer img{width:180px}.footer p{margin:0;font-size:12px}
 @media(max-width:980px){.desktop-nav{display:none}.menu-toggle{display:block}.hero-layout,.split,.assessment-layout,.contact-card{grid-template-columns:1fr}.hero-layout{gap:68px}.dashboard-shell{transform:none}.feature-grid{grid-template-columns:1fr}.feature.large{min-height:560px}.feature.wide{grid-column:auto;grid-template-columns:1fr}.factor-grid{grid-template-columns:1fr 1fr}.footer{grid-template-columns:1fr}}
 @media(max-width:680px){.container{width:min(100% - 28px,1180px)}.hero{padding:128px 0 78px}.section{padding:82px 0}h1{font-size:48px}h2{font-size:38px}.actions{flex-direction:column}.button{width:100%}.dash-kpis{grid-template-columns:1fr}.meta{display:none}.signal-inner{align-items:flex-start;flex-direction:column;padding:22px 0}.copy-grid,.factor-grid{grid-template-columns:1fr}.feature.large{min-height:500px}.about-card,.contact-card{padding:40px 28px}.about-card>p{font-size:24px}.statement strong{font-size:23px}}
+/* Pilot enquiry popup */
+
+.contact-actions button {
+  border: 0;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.pilot-dialog {
+  width: min(760px, calc(100% - 32px));
+  max-height: calc(100vh - 32px);
+  padding: 0;
+  border: 0;
+  border-radius: 28px;
+  background: transparent;
+  overflow: visible;
+}
+
+.pilot-dialog::backdrop {
+  background: rgba(4, 18, 22, 0.78);
+  backdrop-filter: blur(8px);
+}
+
+.pilot-modal {
+  position: relative;
+  max-height: calc(100vh - 32px);
+  padding: 48px;
+  border-radius: 28px;
+  background: var(--paper);
+  box-shadow: 0 32px 100px rgba(3, 18, 22, 0.4);
+  overflow-y: auto;
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 22px;
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  color: var(--ink);
+  background: #fff;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 28px;
+  line-height: 1;
+}
+
+.modal-close:hover {
+  background: var(--bg);
+}
+
+.modal-intro {
+  max-width: 610px;
+  margin-bottom: 32px;
+}
+
+.modal-intro h2 {
+  margin-bottom: 16px;
+  padding-right: 35px;
+  font-size: clamp(34px, 5vw, 50px);
+}
+
+.modal-intro p {
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 17px;
+}
+
+.pilot-form {
+  display: grid;
+  gap: 22px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.form-field {
+  display: grid;
+  gap: 8px;
+}
+
+.form-field label {
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  outline: none;
+  color: var(--ink);
+  background: #fff;
+  font: inherit;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+
+.form-field textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+  border-color: var(--green2);
+  box-shadow: 0 0 0 4px rgba(155, 207, 75, 0.18);
+}
+
+.privacy-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  color: var(--muted);
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.privacy-check input {
+  width: 17px;
+  height: 17px;
+  margin-top: 3px;
+  accent-color: var(--green2);
+}
+
+.form-submit {
+  width: fit-content;
+  border: 0;
+  cursor: pointer;
+  font: inherit;
+}
+
+.form-note {
+  margin: -8px 0 0;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.form-honeypot {
+  position: absolute !important;
+  left: -9999px !important;
+  opacity: 0 !important;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+@media (max-width: 680px) {
+  .pilot-dialog {
+    width: min(100% - 18px, 760px);
+    max-height: calc(100vh - 18px);
+  }
+
+  .pilot-modal {
+    max-height: calc(100vh - 18px);
+    padding: 42px 22px 28px;
+    border-radius: 22px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-submit {
+    width: 100%;
+  }
+
+  .modal-close {
+    top: 14px;
+    right: 14px;
+  }
+}
